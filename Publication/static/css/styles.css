@@ -82,6 +82,7 @@
 *,
 *::before,
 *::after {
+  border-radius: 30px;
   box-sizing: border-box;
 }
 
@@ -10794,5 +10795,6 @@ header.masthead .post-heading .meta a {
 @media (min-width: 992px) {
   .post-preview > a > .post-title {
     font-size: 2.25rem;
+    border-radius: 35px;
   }
 }
