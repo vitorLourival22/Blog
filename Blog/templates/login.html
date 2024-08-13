@@ -4,6 +4,8 @@
   <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
+    <p><input type="email" placeholder="Email"></p>
+    <p><input type="password" placeholder="Senha"></p>
     <button type="submit">Login</button>
   </form>
 {% endblock %}
