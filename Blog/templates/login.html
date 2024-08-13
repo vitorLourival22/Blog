@@ -1,5 +1,7 @@
 {% load static %}
 {% block content %}
+<link href="{% static 'css/login.css' %}" rel="stylesheet" />
+<div class="log">
   <h1>Login</h1>
   <form method="post">
     {% csrf_token %}
@@ -8,4 +10,5 @@
     <p><input type="password" placeholder="Senha"></p>
     <button type="submit">Login</button>
   </form>
+</div>
 {% endblock %}
