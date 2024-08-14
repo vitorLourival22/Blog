@@ -2,13 +2,22 @@
 {% block content %}
 <link href="{% static 'css/login.css' %}" rel="stylesheet" />
 <div class="log">
-  <h1>Login</h1>
+  <h1>LOGIN</h1>
   <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <p><input type="email" placeholder="Email"></p>
-    <p><input type="password" placeholder="Senha"></p>
-    <button type="submit">Login</button>
+    <label for="email" class="emaili">
+      <input type="email" placeholder="Email">
+    </label>
+    <br>
+    <br>
+    <label for="password"><input type="password" placeholder="Senha">
+    </label>
+    <br>
+    <br>
+    <button class="btn" type="submit">Login</button>
+    <br>
+    <button class="btn-pass" type="submit">Esqueçeu sua senha?</button>
   </form>
 </div>
 {% endblock %}
