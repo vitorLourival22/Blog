@@ -1,79 +1,107 @@
-body{
+body {
     display: flex;
-    justify-content: right;
     background-color: black;
-    font-family:helvetica,arial,sans-serif;
-
+    font-family: helvetica, arial, sans-serif;
 }
-h1{
+
+h1 {
     margin-top: 70px;
     font-size: 60px;
     color: white;
 }
-.log{
-    background-color: rgba(1, 1, 66, 0.1);
+
+.log {
+    position: absolute; /* ou 'absolute' dependendo da necessidade */
+    top: 5%;
+    right: 1%;
+    background-color: rgba(1, 1, 82, 0.158);
     width: 100vh;
     height: 90vh;
     text-align: center;
     border-radius: 30px;
     backdrop-filter: blur(5px);
--webkit-backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
-.img{
-    background-size:cover;
+
+.img {
+    background-size: cover;
     background-position: left;
 }
 
-input{
+input {
     padding: 10px;
-    width: 250px;
+    width: 300px;
     border-radius: 10px;
     border-style: none;
-    background-color: rgba(255, 255, 255, 0.087);
+    background-color: rgba(255, 255, 255, 0.135);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     font-size: 15px;
     font-weight: bold;
     color: white;
+    transition: background-color 0.3s ease;
 }
-input:hover{
+
+input:hover {
     background-color: rgba(255, 255, 255, 0.32);
 }
-input::placeholder{
+
+input::placeholder {
     color: rgba(220, 220, 220, 0.749);
     font-size: 15px;
     font-weight: bold;
 }
-.btn{
-    background-color: white;
+
+.btn {
+    background-color: rgba(255, 255, 255, 0.632);
     font-size: 15px;
     font-weight: bold;
-    width: 250px;
-    height: 50px;
+    width: 300px;
+    height: 40px;
     border-radius: 10px;
-    transition: 0.5s;
-}
-.btn-pass{
-    border-color: white;
-    margin: 20px;
-    background-color: rgb(0, 0, 0);
-    color: white;
-    font-size: 15px;
-    width: 250px;
-    height: 50px;
-    border-radius: 10px;
-    transition: 0.5s;
-}
-.btn-pass:hover{
-    background-color: rgb(31, 31, 31);
+    transition: width 0.7s, height 0.7s, opacity 0.7s;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
-.btn:hover{
-    transition: 0.7s;
+.btn:hover {
     width: 255px;
     height: 55px;
     opacity: 0.5;
 }
-.t1{
+
+.btn-pass {
+    border: 1px solid white;
+    margin: 20px;
+    background-color: black;
+    color: white;
+    font-size: 15px;
+    width: 250px;
+    height: 30px;
+    border-radius: 10px;
+    transition: background-color 0.5s ease;
+}
+
+.btn-pass:hover {
+    background-color: rgb(31, 31, 31);
+}
+.btn-cad {
+    border: 1px solid white;
+    margin: 20px;
+    background-color: black;
+    color: white;
+    font-size: 15px;
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    transition: background-color 0.5s ease;
+}
+
+.btn-cad:hover {
+    background-color: rgb(31, 31, 31);
+}
+
+.t1 {
     text-align: left;
     display: flex;
 }
-
