@@ -1,30 +1,46 @@
 body{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.916), rgb(98, 98, 98));
+    justify-content: right;
+    background-color: black;
+    font-family:helvetica,arial,sans-serif;
+
 }
 h1{
-    font-family:sans-serif;
     margin-top: 70px;
     font-size: 60px;
     color: white;
 }
 .log{
-    background-image: linear-gradient(280deg, rgba(0, 0, 0, 0.587), rgb(39, 38, 38));
+    background-color: rgba(1, 1, 66, 0.1);
     width: 100vh;
     height: 90vh;
     text-align: center;
     border-radius: 30px;
+    backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+}
+.img{
+    background-size:cover;
+    background-position: left;
 }
 
 input{
     padding: 10px;
     width: 250px;
     border-radius: 10px;
-}
-input::before::placeholder{
+    border-style: none;
+    background-color: rgba(255, 255, 255, 0.087);
+    font-size: 15px;
+    font-weight: bold;
     color: white;
+}
+input:hover{
+    background-color: rgba(255, 255, 255, 0.32);
+}
+input::placeholder{
+    color: rgba(220, 220, 220, 0.749);
+    font-size: 15px;
+    font-weight: bold;
 }
 .btn{
     background-color: white;
@@ -46,7 +62,9 @@ input::before::placeholder{
     border-radius: 10px;
     transition: 0.5s;
 }
-
+.btn-pass:hover{
+    background-color: rgb(31, 31, 31);
+}
 
 .btn:hover{
     transition: 0.7s;
@@ -54,5 +72,8 @@ input::before::placeholder{
     height: 55px;
     opacity: 0.5;
 }
-
+.t1{
+    text-align: left;
+    display: flex;
+}
 
