@@ -8,6 +8,7 @@
 <body class="img" style="background-image: url('{% static 'assets/img/fundo.jpg'%}')">
 </body>
 <div class="log">
+  <div class="item-log">
   <h1>LOGIN</h1>
   <form method="post">
     {% csrf_token %}
@@ -27,5 +28,6 @@
     <br>
     <button class="btn-cad" type="submit">Criar uma Conta</button>
   </form>
+</div>
 </div>
 {% endblock %}
