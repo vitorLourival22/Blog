@@ -1,36 +1,47 @@
 body {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: black;
     font-family: helvetica, arial, sans-serif;
 }
 
 h1 {
     margin-top: 70px;
-    font-size: 60px;
+    font-size: 4vw; /* Responsivo baseado na largura da viewport */
     color: white;
+    text-align: center;
 }
 
 .log {
-    position: absolute; /* ou 'absolute' dependendo da necessidade */
-    top: 5%;
-    right: 1%;
+    position: absolute;
+    top: 1%;
+    right: 3%;
     background-color: rgba(1, 1, 82, 0.158);
-    width: 100vh;
+    width: 160vh; /* Responsivo com base na largura da viewport */
+    max-width: 500px; /* Limita a largura máxima */
     height: 90vh;
     text-align: center;
     border-radius: 30px;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
+    padding: 20px;
 }
 
 .img {
     background-size: cover;
     background-position: left;
+    width: 100%;
+    height: auto;
 }
 
 input {
     padding: 10px;
-    width: 300px;
+    width: 80%; /* Responsivo */
+    max-width: 300px;
     border-radius: 10px;
     border-style: none;
     background-color: rgba(231, 231, 231, 0.548);
@@ -56,7 +67,8 @@ input::placeholder {
     background-color: rgba(255, 255, 255, 0.632);
     font-size: 15px;
     font-weight: bold;
-    width: 300px;
+    width: 80%; /* Responsivo */
+    max-width: 300px;
     height: 40px;
     border-radius: 10px;
     transition: width 0.7s, height 0.7s, opacity 0.7s;
@@ -70,37 +82,43 @@ input::placeholder {
     opacity: 0.5;
 }
 
-.btn-pass {
+.btn-pass, .btn-cad {
     border: 1px solid white;
-    margin: 20px;
+    margin: 20px auto;
     background-color: black;
     color: white;
     font-size: 15px;
-    width: 250px;
-    height: 30px;
-    border-radius: 10px;
-    transition: background-color 0.5s ease;
-}
-
-.btn-pass:hover {
-    background-color: rgb(31, 31, 31);
-}
-.btn-cad {
-    border: 1px solid white;
-    margin: 20px;
-    background-color: black;
-    color: white;
-    font-size: 15px;
-    width: 300px;
+    width: 80%; /* Responsivo */
+    max-width: 300px;
     height: 40px;
     border-radius: 10px;
     transition: background-color 0.5s ease;
 }
 
-.btn-cad:hover {
+.btn-pass:hover, .btn-cad:hover {
     background-color: rgb(31, 31, 31);
 }
 
-.item-log{
-    margin-top: 200px;
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 6vw; /* Ajuste em telas menores */
+    }
+    
+    .log {
+        width: 90%;
+        max-width: 600px;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        height: 40%;
+    }
+
+    input, .btn, .btn-pass, .btn-cad {
+        width: 90%; /* Mais espaço em telas menores */
+    }
+
+    .btn:hover {
+        width: 90%; /* Evita encolhimento excessivo em telas pequenas */
+    }
 }
