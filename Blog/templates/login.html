@@ -10,15 +10,15 @@
 <div class="log">
   <div class="item-log">
   <h1>LOGIN</h1>
-  <form method="post">
-    {% csrf_token %}
+    <form method="post">
+      {% csrf_token %}
     {{ form.as_p }}
-    <label for="email" class="emaili">
-      <input type="email" placeholder="Email">
+    <label for="email" class="email">
+      <input type="email"  name="Email" placeholder="email" required>
     </label>
     <br>
     <br>
-    <label for="password"><input type="password" placeholder="Senha">
+    <label for="password"><input type="password" name="password" placeholder="Senha" required>
     </label>
     <br>
     <br>
@@ -26,7 +26,7 @@
     <br>
     <button class="btn-pass" type="submit">Esqueçeu sua senha?</button>
     <br>
-    <button class="btn-cad" type="submit">Criar uma Conta</button>
+    <a href="{% url 'signup' %}">Criar uma Conta</a>
   </form>
 </div>
 </div>
