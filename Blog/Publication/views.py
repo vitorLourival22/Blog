@@ -7,6 +7,9 @@ from .forms import SignUpForm, LoginForm
 def index(request):
     return render(request, 'index.html')
 
+def page(request):
+    return render(request, 'index1.html')
+
 def about(request):
     return render(request, 'about.html')
 
@@ -29,7 +32,7 @@ def login(request):
         if form.is_valid():
             user = form.get_user()
             auth_login(request, user)
-            return redirect('index')
+            return redirect('page')
     else:
         form = LoginForm()
     return render(request, 'login.html', {'form': form})
