@@ -12,22 +12,21 @@
   <h1>LOGIN</h1>
     <form method="post">
       {% csrf_token %}
-    {{ form.as_p }}
-    <label for="email" class="email">
-      <input type="email"  name="Email" placeholder="email" required>
-    </label>
-    <br>
-    <br>
-    <label for="password"><input type="password" name="password" placeholder="Senha" required>
-    </label>
-    <br>
-    <br>
-    <button class="btn" type="submit">Login</button>
-    <br>
-    <button class="btn-pass" type="submit">Esqueçeu sua senha?</button>
-    <br>
-    <a href="{% url 'signup' %}">Criar uma Conta</a>
-  </form>
-</div>
+      {{ form.non_field_errors }}
+      <div class="form-group">
+        {{ form.identifier }}
+      </div>
+      <br>
+      <div class="form-group">
+        {{ form.password }}
+      </div>
+      <br>
+      <button class="btn" type="submit">Login</button>
+      <br>
+      <a href="">Esqueceu sua senha?</a>
+      <br>
+      <a href="{% url 'signup' %}">Criar uma Conta</a>
+    </form>
+  </div>
 </div>
 {% endblock %}
