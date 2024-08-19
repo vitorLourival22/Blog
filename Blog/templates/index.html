@@ -31,9 +31,11 @@
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'about' %}">About</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="post.html">Sample Post</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'contact' %}">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'login' %}">Login</a></li>
-                        <!-- New button for creating a post -->                    </ul>
-                </div>
+                        <li class="nav-item">
+                            <a class="btn btn-primary text-uppercase" href="{% url 'login' %}" style="margin-left: 10px; background-color: rgb(0, 0, 72); border-radius: 20px; border-color: rgba(2, 2, 144, 0.603);" onmouseover="this.style.backgroundColor='rgba(2, 2, 144, 0.803)'" onmouseout="this.style.backgroundColor='rgb(0, 0, 100)'">
+                                Fazer Login
+                            </a>
+                        </li>            </div>
             </div>
         </nav>
         <!-- Page Header-->
