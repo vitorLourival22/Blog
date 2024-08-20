@@ -8,4 +8,4 @@ class Publication(models.Model):
     title = models.CharField(max_length=100,verbose_name="itulo da Publicação")
 class Meta:
     db_table = 'publications'
-    
+

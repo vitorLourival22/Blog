@@ -5,7 +5,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from django.contrib.auth import authenticate
-from .models import Publication
+from .models import Publication , Post
 
 class PostForm(forms.ModelForm):
     class Meta:

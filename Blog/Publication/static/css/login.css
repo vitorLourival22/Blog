@@ -8,7 +8,6 @@ body {
     background-color: black;
     font-family: helvetica, arial, sans-serif;
 }
-
 h1 {
     margin-top: 70px;
     font-size: 4vw; /* Responsivo baseado na largura da viewport */
@@ -20,7 +19,7 @@ h1 {
     position: absolute;
     top: 1%;
     right: 3%;
-    background-color: rgba(1, 1, 82, 0.158);
+    background-color: rgba(1, 21, 112, 0.158);
     width: 160vh; /* Responsivo com base na largura da viewport */
     max-width: 500px; /* Limita a largura máxima */
     height: 90vh;
