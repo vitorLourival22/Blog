@@ -7,23 +7,14 @@
 <div class="log">
   <div class="item-log">
   <h1>Criar Publicação</h1>
-    <form method="post">
-    <label for="Posted">
-        <input class="ps" type="text" name="po" id="posted" placeholder="   Descrição">
-    </label>
-    <br>
-    <label for="imgpos">
-        <div class="upload-wrapper">
-            <br>
-            <input type="file" id="file-upload" />
-            <label for="file-upload" class="upload-button">Midia</label>
-        </div>
-    </label>
-      {% csrf_token %}
-      {{ form.non_field_errors }}
-      <br>
-      <a class="bt1" href="{% url 'signup' %}">Publicar</a>
-    </form>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="form-group">
+      {{ form.email }}
+    </div>
+    <button type="submit">Create Publication</button>
+</form>
   </div>
 </div>
 {% endblock %}

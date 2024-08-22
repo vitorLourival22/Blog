@@ -5,13 +5,12 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from django.contrib.auth import authenticate
-from .models import Publication , Post
+from .models import Publication
 
-class PostForm(forms.ModelForm):
+class PublicationForm(forms.ModelForm):
     class Meta:
         model = Publication
-        fields = ['title']
-
+        fields = ('title', 'Author', 'date_publication', 'pub_text')
 
 class SignUpForm(UserCreationForm):
     # Campos do formulário com placeholders e classes adicionadas
@@ -101,3 +100,4 @@ class LoginForm(forms.Form):
 
     def get_user(self):
         return self.user
+    

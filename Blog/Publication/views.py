@@ -2,12 +2,14 @@
 
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login as auth_login
-from .forms import SignUpForm, LoginForm , PostForm
+from .forms import SignUpForm, LoginForm , PublicationForm
+from .models import Publication
 
 def index(request):
     return render(request, 'index.html')
 
 def page(request):
+    publications = Publication
     return render(request, 'index1.html')
 
 def about(request):
@@ -40,15 +42,12 @@ def login(request):
         form = LoginForm()
     return render(request, 'login.html', {'form': form})
 
-def create_post(request):
+def create_publication(request):
     if request.method == 'POST':
-        form = PostForm(request.POST, request.FILES)
+        form = PublicationForm(request.POST)
         if form.is_valid():
-            post = form.save(commit=False)
-            post.user = request.user  # Atribua o usuário atual à postagem
-            post.save()
-            return redirect('post_success')  # Redirecionar para uma página de sucesso ou lista de postagens
+            form.save()
+            return redirect('page')
     else:
-        form = PostForm()
-    
-    return render(request, 'create_post.html', {'form': form})
+        form = PublicationForm()
+    return render(request, 'posted.html', {'form': form})
