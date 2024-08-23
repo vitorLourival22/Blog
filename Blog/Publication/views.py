@@ -9,8 +9,8 @@ def index(request):
     return render(request, 'index.html')
 
 def page(request):
-    publications = Publication
-    return render(request, 'index1.html')
+    Publications = Publication.objects.all()
+    return render(request, 'index1.html', {'Publications': Publications})
 
 def about(request):
     return render(request, 'about.html')
@@ -42,12 +42,19 @@ def login(request):
         form = LoginForm()
     return render(request, 'login.html', {'form': form})
 
-def create_publication(request):
+def posted(request):
     if request.method == 'POST':
-        form = PublicationForm(request.POST)
+        form = PublicationForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('page')
     else:
         form = PublicationForm()
     return render(request, 'posted.html', {'form': form})
+
+def delete_publication(request, pk):
+    publication = Publication.objects.get(pk=pk)
+    if request.method == 'POST':
+        publication.delete()
+        return redirect('page')
+    return render(request, 'delete_publication.html', {'publication': publication})

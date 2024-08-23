@@ -1,0 +1,9 @@
+<h1>Confirme a exclusão da publicação</h1>
+
+<p>Tem certeza que deseja excluir a publicação "{{ publication.title }}"?</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Excluir</button>
+    <a href="{% url 'page' %}">Cancelar</a>
+</form>
