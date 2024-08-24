@@ -1,9 +1,11 @@
+{% load static %}
 <h1>Confirme a exclusão da publicação</h1>
 
 <p>Tem certeza que deseja excluir a publicação "{{ publication.title }}"?</p>
-
+<link href="{% static 'css/login.css' %}" rel="stylesheet"/>
+<body class="img" style="background-image: url('{% static 'assets/img/fundo.jpg'%}')">
 <form method="post">
     {% csrf_token %}
-    <button type="submit">Excluir</button>
+    <button class="bt1" type="submit">Excluir</button>
     <a href="{% url 'page' %}">Cancelar</a>
 </form>

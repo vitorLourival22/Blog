@@ -57,15 +57,20 @@
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <!-- Post preview-->
                     <div class="post-preview">
-                        <ul>
                             {% for publication in Publications %}
-                                <li>
-                                    <h2>{{ publication.title }}</h2>
-                                    <p>Author: {{ publication.author }}</p>
-                                    <p>Publication Date: {{ publication.date_publication }}</p>
-                                    <p>Text: {{ publication.pub_text }}</p>
-                                    <a href="{% url 'delete_publication' publication.pk %}">Excluir</a>
-                                </li>
+                                    <div class="post-preview">
+                                        <a href="post.html">
+                                            <h2 class="post-title"style="background-image: url('{% static 'assets/img/logo.jpg' %}'); background-size:450px 400px; background-position:center;">
+                                                <br><br><br><br><br>{{ publication.title }} 
+                                            </h2>
+                                            <h3 class="post-subtitle">{{ publication.pub_text }}</h3>
+                                        </a>
+                                        <p class="post-meta">
+                                            Posted by
+                                            <a href="#!">{{ publication.author }}</a>
+                                            {{ publication.date_publication }} <a href="{% url 'delete_publication' publication.pk %}">Excluir</a>
+                                        </p>
+                                    </div>
                             {% empty %}
                                 <li>No publications available.</li>
                             {% endfor %}
