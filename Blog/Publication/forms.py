@@ -10,7 +10,7 @@ from .models import Publication
 class PublicationForm(forms.ModelForm):
     class Meta:
         model = Publication
-        fields = ('title', 'author', 'date_publication', 'pub_text')
+        fields = ('Titulo', 'Autor', 'Descrição','image')
 class SignUpForm(UserCreationForm):
     # Campos do formulário com placeholders e classes adicionadas
     username = forms.CharField(

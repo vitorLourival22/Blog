@@ -2,8 +2,10 @@
 
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login as auth_login
+from blog import settings
 from .forms import SignUpForm, LoginForm , PublicationForm
 from .models import Publication
+
 
 def index(request):
     return render(request, 'index.html')
@@ -46,7 +48,7 @@ def posted(request):
     if request.method == 'POST':
         form = PublicationForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            Publication = form.save()
             return redirect('page')
     else:
         form = PublicationForm()
@@ -58,3 +60,17 @@ def delete_publication(request, pk):
         publication.delete()
         return redirect('page')
     return render(request, 'delete_publication.html', {'publication': publication})
+
+def publicacao(request):
+    return render(request, 'publicação.html')
+
+def edit_publication(request, pk):
+    publication = Publication.objects.get(pk=pk)
+    if request.method == 'POST':
+        form = PublicationForm(request.POST, instance=publication)
+        if form.is_valid():
+            form.save()
+            return redirect('page')
+    else:
+        form = PublicationForm(instance=publication)
+    return render(request, 'edit_publication.html', {'form': form})

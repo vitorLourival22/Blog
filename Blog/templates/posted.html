@@ -7,11 +7,12 @@
 <div class="log">
   <div class="item-log">
   <h1>Criar Publicação</h1>
-  <form method="post">
+  <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Postar</button>
-</form>
+    </div>
+    <button class="bt1" type="submit">Postar</button>
+  </form>
   </div>
 </div>
 {% endblock %}

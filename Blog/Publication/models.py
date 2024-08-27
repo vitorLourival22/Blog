@@ -3,10 +3,11 @@ from django.db import models
 
 class Publication(models.Model):
     #Author = models.ForeignKey(Author,on_delete=models.CASCADE,verbose_name="Nome do Autor")
-    title = models.CharField(max_length=255)
-    author = models.CharField(max_length=20)
-    date_publication = models.DateField()
-    pub_text = models.TextField()
+    Titulo = models.CharField(max_length=255)
+    Autor = models.CharField(max_length=20)
+    date_publication = models.DateField(auto_now_add=True)
+    Descrição = models.TextField()
+    image = models.ImageField(upload_to='publications/', blank=True, null=True)
 class Meta:
     db_table = 'publications'
 

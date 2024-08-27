@@ -1,4 +1,4 @@
-from .views import index , about , contact , login , signup , page, posted
+from .views import index , about , contact , login , signup , page, posted, publicacao
 from django.urls import path
 from . import views
 
@@ -11,4 +11,5 @@ urlpatterns = [
     path('signup/', signup, name='signup'),   
     path('posted/', views.posted, name='posted'),
     path('delete_publication/<pk>/', views.delete_publication, name='delete_publication'),
+    path('publicacao/<pk>/editar/', views.edit_publication, name='edit_publication'),
     ]

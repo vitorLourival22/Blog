@@ -59,16 +59,20 @@
                     <div class="post-preview">
                             {% for publication in Publications %}
                                     <div class="post-preview">
-                                        <a href="post.html">
-                                            <h2 class="post-title"style="background-image: url('{% static 'assets/img/logo.jpg' %}'); background-size:450px 400px; background-position:center;">
-                                                <br><br><br><br><br>{{ publication.title }} 
+                                        <a href="">
+                                            <h2 class="post-title">
+                                                {{ publication.Titulo }} 
                                             </h2>
-                                            <h3 class="post-subtitle">{{ publication.pub_text }}</h3>
+                                            <h3 class="post-subtitle">{{ publication.Descrição }}</h3>
                                         </a>
+                                        {% if publication.image %}
+                                        <img src="{{ publication.image.url }}">
+                                               {% endif %}
                                         <p class="post-meta">
                                             Posted by
-                                            <a href="#!">{{ publication.author }}</a>
-                                            {{ publication.date_publication }} <a href="{% url 'delete_publication' publication.pk %}">Excluir</a>
+                                            <a href="#!">{{ publication.Autor }}</a>
+                                            {{ publication.date_publication }} <a class="del" href="{% url 'delete_publication' publication.pk %}">Excluir</a>
+                                            <a class="edit" href="{% url 'edit_publication' publication.pk %}">Editar</a>
                                         </p>
                                     </div>
                             {% empty %}
