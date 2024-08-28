@@ -7,7 +7,7 @@ class Publication(models.Model):
     Autor = models.CharField(max_length=20)
     date_publication = models.DateField(auto_now_add=True)
     Descrição = models.TextField()
-    image = models.ImageField(upload_to='publications/', blank=True, null=True)
+    image = models.ImageField(upload_to='post/', blank=True, null=True)
 class Meta:
     db_table = 'publications'
 

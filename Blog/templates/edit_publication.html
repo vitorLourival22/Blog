@@ -1,8 +1,10 @@
+{% load static %}
 {% block content %}
+<link href="{% static 'css/post.css' %}" rel="stylesheet"/>
   <h1>Editar Publicação</h1>
   <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Salvar</button>
+    <button class="bt1" type="submit">Salvar</button>
   </form>
 {% endblock %}
