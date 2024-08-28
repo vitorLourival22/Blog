@@ -62,12 +62,13 @@
                                         <a href="">
                                             <h2 class="post-title">
                                                 {{ publication.Titulo }} 
+                                                {% if publication.image %}
+                                        <img src="{{ publication.image.url }}">
+                                               {% endif %}
                                             </h2>
                                             <h3 class="post-subtitle">{{ publication.Descrição }}</h3>
                                         </a>
-                                        {% if publication.image %}
-                                        <img src="{{ publication.image.url }}">
-                                               {% endif %}
+                                        
                                         <p class="post-meta">
                                             Posted by
                                             <a href="#!">{{ publication.Autor }}</a>
