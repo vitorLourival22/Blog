@@ -59,7 +59,7 @@
                     <div class="post-preview">
                             {% for publication in Publications %}
                                     <div class="post-preview">
-                                        <a href="">
+                                        <a href="{% url 'publicacao_detail' publication.pk %}">
                                             <h2 class="post-title">
                                                 {{ publication.Titulo }} 
                                                 {% if publication.image %}
