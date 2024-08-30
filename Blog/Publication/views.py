@@ -3,7 +3,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login as auth_login
 from blog import settings
-from .forms import SignUpForm, LoginForm , PublicationForm
+from .forms import SignUpForm, LoginForm , PublicationForm,
 from .models import Publication
 
 
