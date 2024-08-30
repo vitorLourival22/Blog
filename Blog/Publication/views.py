@@ -74,3 +74,7 @@ def edit_publication(request, pk):
     else:
         form = PublicationForm(instance=publication)
     return render(request, 'edit_publication.html', {'form': form})
+
+def publicacao_detail(request, pk):
+    publication = Publication.objects.get(pk=pk)
+    return render(request, 'publicacao_detail.html', {'publication': publication})

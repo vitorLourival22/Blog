@@ -1,4 +1,4 @@
-from .views import index , about , contact , login , signup , page, posted, publicacao
+from .views import index , about , contact , login , signup , page, posted, publicacao,publicacao_detail
 from django.urls import path
 from . import views
 from django.conf import settings
@@ -14,6 +14,7 @@ urlpatterns = [
     path('posted/', views.posted, name='posted'),
     path('delete_publication/<pk>/', views.delete_publication, name='delete_publication'),
     path('publicacao/<pk>/editar/', views.edit_publication, name='edit_publication'),
+    path('publicacao/<pk>/', views.publicacao_detail, name='publicacao_detail'),
     ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
