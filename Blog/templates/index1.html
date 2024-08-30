@@ -45,7 +45,9 @@
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="site-heading">
                             <h1>Aries Studio</h1>
-                            <span class="subheading"></span>
+                            <span class="subheading">{% if request.user.is_authenticated %}
+                                <p>Bem vindo(a) {{ request.user.username }}!</p>
+                              {% endif %}</span>
                         </div>
                     </div>
                 </div>
@@ -71,7 +73,9 @@
                                         
                                         <p class="post-meta">
                                             Posted by
-                                            <a href="#!">{{ publication.Autor }}</a>
+                                            <a href="#!">{% if request.user.is_authenticated %}
+                                                {{ request.user.username }}
+                                              {% endif %}</a>
                                             {{ publication.date_publication }} <a class="del" href="{% url 'delete_publication' publication.pk %}">Excluir</a>
                                             <a class="edit" href="{% url 'edit_publication' publication.pk %}">Editar</a>
                                         </p>
